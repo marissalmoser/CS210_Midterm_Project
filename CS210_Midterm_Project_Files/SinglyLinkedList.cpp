@@ -36,11 +36,12 @@ void SinglyLinkedList::insertLast(School data)
 
 School SinglyLinkedList::deleteByName(string name)
 {
+    School foundSchool;
+
     if (head == nullptr)
     {
         //is empty
-        School nullSchool;
-        return nullSchool;
+        return foundSchool;
     }
 
     //traverse to find node
@@ -51,7 +52,8 @@ School SinglyLinkedList::deleteByName(string name)
         if (temp->data.name == name)
         {
             tempPrev->next = temp->next;
-            return temp->data;
+            foundSchool = temp->data;
+            return foundSchool;
         }
 
         tempPrev = temp;
@@ -59,17 +61,17 @@ School SinglyLinkedList::deleteByName(string name)
     }
 
     //node not found
-    School nullSchool;
-    return nullSchool;
+    return foundSchool;
 }
 
 School SinglyLinkedList::findByName(string name)
 {
+    School foundSchool;
+
     if (head == nullptr)
     {
         //is empty
-        School nullSchool;
-        return nullSchool;
+        return foundSchool;
     }
 
     //traverse to find node
@@ -78,15 +80,15 @@ School SinglyLinkedList::findByName(string name)
     {
         if (temp->data.name == name)
         {
-            return temp->data;
+            foundSchool = temp->data;
+            return foundSchool;
         }
 
         temp = temp->next;
     }
 
     //node not found
-    School nullSchool;
-    return nullSchool;
+    return foundSchool;
 }
 
 void SinglyLinkedList::display()
@@ -94,7 +96,7 @@ void SinglyLinkedList::display()
     Node* temp = head;
     while (temp != nullptr)
     {
-        cout << temp->data.name << 
+        cout << temp->data.name << ", " <<
             temp->data.address << ", " <<
             temp->data.city << ", " <<
             temp->data.state << ", " <<
@@ -102,17 +104,4 @@ void SinglyLinkedList::display()
         temp = temp->next;
     }
     cout << "nullptr" << endl;
-}
-
-int main()
-{
-    SinglyLinkedList list;
-
-    School* Washington = new School;
-    Washington->name = "Washington";
-    Washington->address = "1506. W Kingsway Dr.";
-
-    list.insertFirst(*Washington);
-
-    list.display();
 }
