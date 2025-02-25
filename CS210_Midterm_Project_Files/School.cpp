@@ -8,4 +8,6 @@ struct School
 	std::string state;
 	std::string county;
 	School* next;
+
+	School() : next(nullptr) {}
 };
