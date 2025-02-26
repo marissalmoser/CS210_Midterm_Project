@@ -7,15 +7,32 @@
 
 using namespace std;
 
+//Prototypes
 SinglyLinkedList ReadFromCSV(string filename, bool hasHeader = false);
+void promptUser();
+void searchSchool();
+void deleteSchool();
+void displaySchool();
+
+SinglyLinkedList list;
 
 int main()
 {
-    //load data and put into list and display
-    SinglyLinkedList list = ReadFromCSV("Illinois_Peoria_Schools.csv", true);
+    //load data, put into list, and display
+    list = ReadFromCSV("Illinois_Peoria_Schools.csv", true);
+    //list.display();
 
+    //prompt user to edit data
+    promptUser();
 }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="filename">the name of the file to open and read</param>
+/// <param name="hasHeader">will determine whether or not to skip the first
+/// line when reading</param>
+/// <returns></returns>
 SinglyLinkedList ReadFromCSV(string filename, bool hasHeader)
 {
     ifstream file(filename);
@@ -28,12 +45,13 @@ SinglyLinkedList ReadFromCSV(string filename, bool hasHeader)
         return data;
     }
 
-    //chech if skip first line
+    //check if first line should be skipped
     if (hasHeader)
     {
         getline(file, line);
     }
 
+    //read file and save data
     while (getline(file, line)) 
     {
         stringstream ss(line);
@@ -60,7 +78,98 @@ SinglyLinkedList ReadFromCSV(string filename, bool hasHeader)
     }
 
     file.close();
-    data.display();
 
     return data;
+}
+
+void promptUser()
+{
+    cout << "------------------------------------\n"
+        "Select 1, 2, 3, or 4: \n" <<
+        "1. Search for school by name\n" <<
+        "2. Delete school by name\n" <<
+        "3. Display List of Schools\n" <<
+        "4. Exit\n" <<
+        "------------------------------------\n" << endl;
+
+    int input;
+    cin >> input;
+
+    switch (input)
+    {
+    case 1:
+        cout << "You selected to search." << endl;
+        searchSchool();
+        break;
+    case 2:
+        cout << "You selected to delete." << endl;
+        deleteSchool();
+        break;
+    case 3:
+        cout << "You selected to display." << endl;
+        displaySchool();
+        break;
+    default:
+        cout << "You selected to exit.\nGoodbye..." << endl;
+        break;
+        return;
+    }
+}
+
+void searchSchool()
+{
+    cout << "Input name of school to find:\n";
+    string input;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin, input);
+
+    School inputSchool = list.findByName(input);
+
+    if (inputSchool.name == "")
+    {
+        cout << "\nInput school is not found\n" << endl;
+    }
+    else
+    {
+        cout << "\nThe school by the name of " << input << " has been found. Here are it's details: \n" <<
+            inputSchool.name << ", " <<
+            inputSchool.address << ", " <<
+            inputSchool.city << ", " <<
+            inputSchool.state << ", " <<
+            inputSchool.county << "\n" << endl;
+    }
+
+    promptUser();
+}
+
+void deleteSchool()
+{
+    cout << "Input name of school to delete:\n";
+    string input;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin, input);
+
+    School inputSchool = list.deleteByName(input);
+
+    if (inputSchool.name == "")
+    {
+        cout << "\nInput school is not found\n" << endl;
+    }
+    else
+    {
+        cout << "\nThe school by the name of " << input << " has been found and deleted. Here are it's details: \n" <<
+            inputSchool.name << ", " <<
+            inputSchool.address << ", " <<
+            inputSchool.city << ", " <<
+            inputSchool.state << ", " <<
+            inputSchool.county << "\n" << endl;
+    }
+
+    promptUser();
+}
+
+void displaySchool()
+{
+    list.display();
+    promptUser();
 }

@@ -12,6 +12,7 @@ struct Node
 class SinglyLinkedList
 {
     Node* head;
+    bool compareStrings(std::string string1, std::string string2);
 
 public:
     SinglyLinkedList() : head(nullptr) {}
@@ -21,5 +22,4 @@ public:
     School deleteByName(std::string name);
     School findByName(std::string name);
     void display();
-
 };

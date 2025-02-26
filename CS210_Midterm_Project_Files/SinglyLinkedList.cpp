@@ -1,10 +1,22 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 #include "SinglyLinkedList.h"
 
 using namespace std;
+
+bool SinglyLinkedList::compareStrings(string string1, string string2)
+{
+    string lower1 = string1;
+    string lower2 = string2;
+    transform(lower1.begin(), lower1.end(), lower1.begin(), ::tolower);
+    transform(lower2.begin(), lower2.end(), lower2.begin(), ::tolower);
+
+    return lower1 == lower2;
+}
 
 void SinglyLinkedList::insertFirst(School data)
 {
@@ -36,32 +48,42 @@ void SinglyLinkedList::insertLast(School data)
 
 School SinglyLinkedList::deleteByName(string name)
 {
-    School foundSchool;
+    Node* foundSchool = nullptr;
 
+    //check if empty
     if (head == nullptr)
     {
-        //is empty
-        return foundSchool;
+        return foundSchool->data;
+    }
+
+    Node* temp = head;
+
+    //head is target or only thing in list
+    if (compareStrings(head->data.name, name))
+    {
+        cout << "deleting head node" << endl;
+
+        head = head->next;
+        return temp->data;
     }
 
     //traverse to find node
-    Node* temp = head;
-    Node* tempPrev = nullptr;
-    while (temp != nullptr)
+    while (!compareStrings(temp->next->data.name, name) && temp->next != nullptr)
     {
-        if (temp->data.name == name)
-        {
-            tempPrev->next = temp->next;
-            foundSchool = temp->data;
-            return foundSchool;
-        }
-
-        tempPrev = temp;
         temp = temp->next;
     }
 
-    //node not found
-    return foundSchool;
+    //Deleting a node that doesn’t exist in the list
+    if (temp->next == nullptr)
+    {
+        cout << "input value not found in list" << endl;
+        return foundSchool->data;
+    }
+
+    cout << "deleting other node" << endl;
+    foundSchool = temp->next;
+    temp->next = temp->next->next;
+    return foundSchool->data;
 }
 
 School SinglyLinkedList::findByName(string name)
@@ -78,7 +100,7 @@ School SinglyLinkedList::findByName(string name)
     Node* temp = head;
     while (temp != nullptr)
     {
-        if (temp->data.name == name)
+        if (compareStrings(temp->data.name, name))
         {
             foundSchool = temp->data;
             return foundSchool;
@@ -86,7 +108,6 @@ School SinglyLinkedList::findByName(string name)
 
         temp = temp->next;
     }
-
     //node not found
     return foundSchool;
 }

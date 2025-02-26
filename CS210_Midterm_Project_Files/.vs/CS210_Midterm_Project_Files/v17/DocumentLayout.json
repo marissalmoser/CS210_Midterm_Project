@@ -3,20 +3,23 @@
   "WorkspaceRootPath": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\MainDriver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:MainDriver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\Illinois_Peoria_Schools.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:Illinois_Peoria_Schools.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:SinglyLinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Dump\\C\u002B\u002BWork\\CS210Labs\\DoublyLinkedList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\MainDriver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:MainDriver.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:SinglyLinkedList.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\Illinois_Peoria_Schools.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:Illinois_Peoria_Schools.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|solutionrelative:SinglyLinkedList.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25347B1F-1884-48B7-B801-0B741FE8A26F}|CS210_Midterm_Project_Files.vcxproj|C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\School.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -29,7 +32,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 177,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -38,52 +41,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "DoublyLinkedList.cpp",
+              "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210Labs\\DoublyLinkedList.cpp",
+              "RelativeDocumentMoniker": "..\\..\\CS210Labs\\DoublyLinkedList.cpp",
+              "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210Labs\\DoublyLinkedList.cpp",
+              "RelativeToolTip": "..\\..\\CS210Labs\\DoublyLinkedList.cpp",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAGIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-25T22:01:34.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Illinois_Peoria_Schools.csv",
               "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\Illinois_Peoria_Schools.csv",
               "RelativeDocumentMoniker": "Illinois_Peoria_Schools.csv",
               "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\Illinois_Peoria_Schools.csv",
               "RelativeToolTip": "Illinois_Peoria_Schools.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
               "WhenOpened": "2025-02-25T17:20:03.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainDriver.cpp",
               "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\MainDriver.cpp",
               "RelativeDocumentMoniker": "MainDriver.cpp",
               "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\MainDriver.cpp",
               "RelativeToolTip": "MainDriver.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAkwKUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-25T16:50:38.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SinglyLinkedList.h",
-              "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h",
-              "RelativeDocumentMoniker": "SinglyLinkedList.h",
-              "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h",
-              "RelativeToolTip": "SinglyLinkedList.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-25T02:03:42.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SinglyLinkedList.cpp",
               "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.cpp",
               "RelativeDocumentMoniker": "SinglyLinkedList.cpp",
               "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.cpp",
               "RelativeToolTip": "SinglyLinkedList.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGIAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAhwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-25T01:57:56.447Z",
               "EditorCaption": ""
@@ -91,6 +94,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "SinglyLinkedList.h",
+              "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h",
+              "RelativeDocumentMoniker": "SinglyLinkedList.h",
+              "ToolTip": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\SinglyLinkedList.h",
+              "RelativeToolTip": "SinglyLinkedList.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-25T02:03:42.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "School.cpp",
               "DocumentMoniker": "C:\\Dump\\C\u002B\u002BWork\\CS210_Midterm_Project\\CS210_Midterm_Project_Files\\School.cpp",
               "RelativeDocumentMoniker": "School.cpp",
@@ -98,7 +114,8 @@
               "RelativeToolTip": "School.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-25T01:52:59.494Z"
+              "WhenOpened": "2025-02-25T01:52:59.494Z",
+              "EditorCaption": ""
             }
           ]
         }
