@@ -20,14 +20,13 @@ int main()
 {
     //load data, put into list, and display
     list = ReadFromCSV("Illinois_Peoria_Schools.csv", true);
-    //list.display();
 
     //prompt user to edit data
     promptUser();
 }
 
 /// <summary>
-/// 
+/// Reads a file of schools from a csv and saves the data to a linked list.
 /// </summary>
 /// <param name="filename">the name of the file to open and read</param>
 /// <param name="hasHeader">will determine whether or not to skip the first
@@ -82,6 +81,9 @@ SinglyLinkedList ReadFromCSV(string filename, bool hasHeader)
     return data;
 }
 
+/// <summary>
+/// prompts the user to search for, delete, or display the schools in the linked list
+/// </summary>
 void promptUser()
 {
     cout << "------------------------------------\n"
@@ -116,6 +118,10 @@ void promptUser()
     }
 }
 
+/// <summary>
+/// locates a school based on user input. prints that school's data and then prompts
+/// the user again.
+/// </summary>
 void searchSchool()
 {
     cout << "Input name of school to find:\n";
@@ -142,6 +148,10 @@ void searchSchool()
     promptUser();
 }
 
+/// <summary>
+/// deletes a school based on user input. prints that school's data and then prompts
+/// the user again.
+/// </summary>
 void deleteSchool()
 {
     cout << "Input name of school to delete:\n";
@@ -168,6 +178,9 @@ void deleteSchool()
     promptUser();
 }
 
+/// <summary>
+/// displays schools in the list and then prompts the user again.
+/// </summary>
 void displaySchool()
 {
     list.display();

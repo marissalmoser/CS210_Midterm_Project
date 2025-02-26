@@ -8,6 +8,10 @@
 
 using namespace std;
 
+/// <summary>
+/// compares 2 strings, case in-sensitive. Returns true if there is a match.
+/// </summary>
+/// <returns></returns>
 bool SinglyLinkedList::compareStrings(string string1, string string2)
 {
     string lower1 = string1;
@@ -18,6 +22,10 @@ bool SinglyLinkedList::compareStrings(string string1, string string2)
     return lower1 == lower2;
 }
 
+/// <summary>
+/// inserts a new school at the beginning of the list.
+/// </summary>
+/// <param name="data">School to add</param>
 void SinglyLinkedList::insertFirst(School data)
 {
     Node* newNode = new Node(data);
@@ -28,6 +36,10 @@ void SinglyLinkedList::insertFirst(School data)
     head = newNode;
 }
 
+/// <summary>
+/// inserts a new school at the end of the list.
+/// </summary>
+/// <param name="data">School to add</param>
 void SinglyLinkedList::insertLast(School data)
 {
     Node* newNode = new Node(data);
@@ -46,6 +58,11 @@ void SinglyLinkedList::insertLast(School data)
     }
 }
 
+/// <summary>
+/// deletes a school in the list from the parameter
+/// </summary>
+/// <param name="name">of the school to delete</param>
+/// <returns></returns>
 School SinglyLinkedList::deleteByName(string name)
 {
     Node* foundSchool = nullptr;
@@ -86,6 +103,11 @@ School SinglyLinkedList::deleteByName(string name)
     return foundSchool->data;
 }
 
+/// <summary>
+/// finds a school in the list from the parameter
+/// </summary>
+/// <param name="name">of the school to find</param>
+/// <returns></returns>
 School SinglyLinkedList::findByName(string name)
 {
     School foundSchool;
@@ -112,6 +134,9 @@ School SinglyLinkedList::findByName(string name)
     return foundSchool;
 }
 
+/// <summary>
+/// displays every school in the list
+/// </summary>
 void SinglyLinkedList::display()
 {
     Node* temp = head;
@@ -124,5 +149,5 @@ void SinglyLinkedList::display()
             temp->data.county << '\n';
         temp = temp->next;
     }
-    cout << "nullptr" << endl;
+    cout << "end of list" << endl;
 }
