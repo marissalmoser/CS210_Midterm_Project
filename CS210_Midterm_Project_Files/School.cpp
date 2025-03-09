@@ -7,7 +7,4 @@ struct School
 	std::string city;
 	std::string state;
 	std::string county;
-	School* next;
-
-	School() : next(nullptr) {}
 };
