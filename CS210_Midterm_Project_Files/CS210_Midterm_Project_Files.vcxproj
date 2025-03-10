@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="MainDriver.cpp" />
     <ClCompile Include="School.cpp" />
+    <ClCompile Include="SchoolBST.cpp" />
     <ClCompile Include="SinglyLinkedList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SchoolBST.h" />
     <ClInclude Include="SinglyLinkedList.h" />
   </ItemGroup>
   <ItemGroup>
