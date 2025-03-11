@@ -11,16 +11,44 @@ void SchoolBST::insert(School school)
 {
 	if (school.name == "")
 	{
+		cout << "input can't be null" << endl;
 		return;		//input cannot be null
 	}
 	if (root == nullptr)
 	{
-		TreeNode newNode(school);
-		root = &newNode;			//new head - will this work?
+		cout << "input is head" << endl;
+
+		root = new TreeNode(school);
 		return;
 	}
 
-	insertNode(school, root);
+	//insertNode(school, root);
+
+	TreeNode* current = root;
+	while (true)
+	{
+		if (compareStrings(school.name, current->data.name) > 0)
+		{
+			// If the school name is greater than the current node's name, go to the right subtree
+			if (current->right == nullptr)
+			{
+				current->right = new TreeNode(school); // Create new node and insert
+				return;
+			}
+			current = current->right; // Move to the right child
+		}
+		else
+		{
+			// If the school name is less than or equal to the current node's name, go to the left subtree
+			if (current->left == nullptr)
+			{
+				current->left = new TreeNode(school); // Create new node and insert
+				return;
+			}
+			current = current->left; // Move to the left child
+		}
+		cout << current << endl;
+	}
 }
 
 void SchoolBST::insertNode(School school, TreeNode* node)
@@ -29,8 +57,7 @@ void SchoolBST::insertNode(School school, TreeNode* node)
 	{
 		if (node->left == nullptr)
 		{
-			TreeNode newNode(school);
-			node->left = &newNode;
+			node->left = new TreeNode(school);
 			return;
 		}
 		insertNode(school, node->left);
@@ -39,8 +66,7 @@ void SchoolBST::insertNode(School school, TreeNode* node)
 	{
 		if (node->right == nullptr)
 		{
-			TreeNode newNode(school);
-			node->right = &newNode;
+			node->right = new TreeNode(school);
 			return;
 		}
 		insertNode(school, node->right);
@@ -49,18 +75,18 @@ void SchoolBST::insertNode(School school, TreeNode* node)
 
 School SchoolBST::deleteByName(std::string name)
 {
-	TreeNode* toDelete = findByName(name);
+	TreeNode* toDelete = findNodeByName(name);
 
 	//input validation
 	if (name == "")
 	{
 		toDelete->data.name = "";
-		return;		//input cannot be null
+		return toDelete->data;		//input cannot be null
 	}
 	if (toDelete->data.name == "")
 	{
 		toDelete->data.name = "";
-		return;		//not in tree
+		return toDelete->data;		//not in tree
 	}
 
 	//delete functionality based on cases
@@ -105,14 +131,87 @@ School SchoolBST::deleteByName(std::string name)
 	return result->data;
 }
 
-TreeNode* SchoolBST::findByName(std::string name)
+School SchoolBST::findByName(std::string name)
 {
+	return findNodeByName(name)->data;
+}
+
+int SchoolBST::compareStrings(string string1, string string2)
+{
+	string lower1 = string1;
+	string lower2 = string2;
+	transform(lower1.begin(), lower1.end(), lower1.begin(), ::tolower);
+	transform(lower2.begin(), lower2.end(), lower2.begin(), ::tolower);
+
+	if (lower1 == lower2)
+	{
+		return 0;
+	}
+	else if (lower1 < lower2)
+	{
+		return 1;
+	}
+	return -1;
+}
+
+void SchoolBST::displayInOrder()
+{
+	if (root != nullptr)
+	{
+		inOrder(root);
+		cout << endl;
+	}
+}
+
+void SchoolBST::displayPreOrder()
+{
+	if (root != nullptr)
+	{
+		preOrder(root);
+		cout << endl;
+	}
+}
+
+void SchoolBST::displayPostOrder()
+{
+	if (root != nullptr)
+	{
+		postOrder(root);
+		cout << endl;
+	}
+}
+
+void SchoolBST::inOrder(TreeNode* node)
+{
+	if (node->left != nullptr) inOrder(node->left);
+	displaySchool(node->data);
+	if (node->right != nullptr) inOrder(node->right);
+}
+
+void SchoolBST::preOrder(TreeNode* node)
+{
+	displaySchool(node->data);
+	if (node->left != nullptr) preOrder(node->left);
+	if (node->right != nullptr) preOrder(node->right);
+}
+
+void SchoolBST::postOrder(TreeNode* node)
+{
+	if (node->left != nullptr) postOrder(node->left);
+	if (node->right != nullptr) postOrder(node->right);
+	displaySchool(node->data);
+}
+
+TreeNode* SchoolBST::findNodeByName(std::string name)
+{
+	TreeNode* temp = root;
+
 	if (name == "")
 	{
-		return;		//input cannot be null
+		temp->data.name = "";
+		return temp;		//input cannot be null
 	}
 
-	TreeNode* temp = root;
 	//look for node
 	while (temp != nullptr)
 	{
@@ -139,82 +238,28 @@ TreeNode* SchoolBST::findByName(std::string name)
 			return temp;
 		}
 	}
+	return temp;
 }
 
-int SchoolBST::compareStrings(string string1, string string2)
-{
-	string lower1 = string1;
-	string lower2 = string2;
-	transform(lower1.begin(), lower1.end(), lower1.begin(), ::tolower);
-	transform(lower2.begin(), lower2.end(), lower2.begin(), ::tolower);
-
-	if (lower1 == lower2)
-	{
-		return 0;
-	}
-	else if (lower1 < lower2)
-	{
-		return 1;
-	}
-	else if (lower1 > lower2)
-	{
-		return -1;
-	}
-}
-
-void SchoolBST::displayInOrder()
-{
-	if (root != nullptr)
-	{
-		inOrder(root);
-		cout << std::endl;
-	}
-}
-
-void SchoolBST::displayPreOrder()
-{
-	if (root != nullptr)
-	{
-		preOrder(root);
-		cout << std::endl;
-	}
-}
-
-void SchoolBST::displayPostOrder()
-{
-	if (root != nullptr)
-	{
-		postOrder(root);
-		cout << std::endl;
-	}
-}
-
-void SchoolBST::inOrder(TreeNode* node)
-{
-	if (node->left != nullptr) inOrder(node->left);
-	displaySchool(node->data);
-	if (node->right != nullptr) inOrder(node->right);
-}
-
-void SchoolBST::preOrder(TreeNode* node)
-{
-	displaySchool(node->data);
-	if (node->left != nullptr) preOrder(node->left);
-	if (node->right != nullptr) preOrder(node->right);
-}
-
-void SchoolBST::postOrder(TreeNode* node)
-{
-	if (node->left != nullptr) postOrder(node->left);
-	if (node->right != nullptr) postOrder(node->right);
-	displaySchool(node->data);
-}
-
-void displaySchool(School inputSchool)
+void SchoolBST::displaySchool(School inputSchool)
 {
 	cout << inputSchool.name << ", " <<
 		inputSchool.address << ", " <<
 		inputSchool.city << ", " <<
 		inputSchool.state << ", " <<
 		inputSchool.county << "\n" << endl;
+}
+
+SchoolBST::~SchoolBST() {
+	deleteTree(root);
+}
+
+void SchoolBST::deleteTree(TreeNode* node) {
+	if (node == nullptr)
+		return;
+
+	deleteTree(node->left);  // Recursively delete left subtree
+	deleteTree(node->right); // Recursively delete right subtree
+
+	delete node;  // Delete the current node
 }

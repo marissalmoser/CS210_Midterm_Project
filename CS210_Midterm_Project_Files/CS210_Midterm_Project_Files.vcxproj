@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BSTDriver.cpp" />
     <ClCompile Include="MainDriver.cpp" />
     <ClCompile Include="School.cpp" />
     <ClCompile Include="SchoolBST.cpp" />
