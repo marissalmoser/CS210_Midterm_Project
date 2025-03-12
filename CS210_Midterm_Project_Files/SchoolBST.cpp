@@ -7,6 +7,25 @@
 
 using namespace std;
 
+void SchoolBST::insertNode(School school, TreeNode* node)
+{
+	if (node == nullptr)
+	{
+		node = new TreeNode(school);
+		cout << node->data.name << endl;
+	}
+	else if (compareStrings(school.name, node->data.name) > 0)
+	{
+		// If the school name is greater than the current node's name, go to the right subtree
+		insertNode(school, node->right);
+	}
+	else if (compareStrings(school.name, node->data.name) >= 0)
+	{
+		// If the school name is less than or equal to the current node's name, go to the left subtree
+		insertNode(school, node->left);
+	}
+}
+
 void SchoolBST::insert(School school)
 {
 	if (school.name == "")
@@ -22,55 +41,7 @@ void SchoolBST::insert(School school)
 		return;
 	}
 
-	//insertNode(school, root);
-
-	TreeNode* current = root;
-	while (true)
-	{
-		if (compareStrings(school.name, current->data.name) > 0)
-		{
-			// If the school name is greater than the current node's name, go to the right subtree
-			if (current->right == nullptr)
-			{
-				current->right = new TreeNode(school); // Create new node and insert
-				return;
-			}
-			current = current->right; // Move to the right child
-		}
-		else
-		{
-			// If the school name is less than or equal to the current node's name, go to the left subtree
-			if (current->left == nullptr)
-			{
-				current->left = new TreeNode(school); // Create new node and insert
-				return;
-			}
-			current = current->left; // Move to the left child
-		}
-		cout << current << endl;
-	}
-}
-
-void SchoolBST::insertNode(School school, TreeNode* node)
-{
-	if (compareStrings(school.name, node->data.name) > 0)
-	{
-		if (node->left == nullptr)
-		{
-			node->left = new TreeNode(school);
-			return;
-		}
-		insertNode(school, node->left);
-	}
-	else
-	{
-		if (node->right == nullptr)
-		{
-			node->right = new TreeNode(school);
-			return;
-		}
-		insertNode(school, node->right);
-	}
+	insertNode(school, root);
 }
 
 School SchoolBST::deleteByName(std::string name)
@@ -243,11 +214,20 @@ TreeNode* SchoolBST::findNodeByName(std::string name)
 
 void SchoolBST::displaySchool(School inputSchool)
 {
-	cout << inputSchool.name << ", " <<
-		inputSchool.address << ", " <<
-		inputSchool.city << ", " <<
-		inputSchool.state << ", " <<
-		inputSchool.county << "\n" << endl;
+	string s = inputSchool.name + ", " +
+		inputSchool.address + ", " +
+		inputSchool.city + ", " +
+		inputSchool.state + ", " +
+		inputSchool.county + "\n";
+
+	if (s.length() > 100)
+	{
+		cout << "string too long";
+	}
+	else
+	{
+		cout << s << endl;
+	}
 }
 
 SchoolBST::~SchoolBST() {
