@@ -235,6 +235,6 @@ void SchoolBST::deleteTree(TreeNode* node)
 	deleteTree(node->left);  // Recursively delete left subtree
 	deleteTree(node->right); // Recursively delete right subtree
 
-	//delete node;  // Delete the current node
+	delete node;  // Delete the current node
 	//cout << node->data.name;
 }
