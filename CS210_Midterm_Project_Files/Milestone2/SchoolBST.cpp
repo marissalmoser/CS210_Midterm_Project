@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void SchoolBST::insertNode(School school, TreeNode* node)
+void SchoolBST::insertNode(School school, TreeNode*& node)
 {
 	if (node == nullptr)
 	{
@@ -19,7 +19,7 @@ void SchoolBST::insertNode(School school, TreeNode* node)
 		// If the school name is greater than the current node's name, go to the right subtree
 		insertNode(school, node->right);
 	}
-	else if (compareStrings(school.name, node->data.name) >= 0)
+	else
 	{
 		// If the school name is less than or equal to the current node's name, go to the left subtree
 		insertNode(school, node->left);
@@ -35,9 +35,8 @@ void SchoolBST::insert(School school)
 	}
 	if (root == nullptr)
 	{
-		cout << "input is head" << endl;
-
 		root = new TreeNode(school);
+		cout << root->data.name << endl;
 		return;
 	}
 
@@ -161,6 +160,7 @@ void SchoolBST::inOrder(TreeNode* node)
 
 void SchoolBST::preOrder(TreeNode* node)
 {
+	//cout << node->data.name;
 	displaySchool(node->data);
 	if (node->left != nullptr) preOrder(node->left);
 	if (node->right != nullptr) preOrder(node->right);
@@ -218,28 +218,21 @@ void SchoolBST::displaySchool(School inputSchool)
 		inputSchool.address + ", " +
 		inputSchool.city + ", " +
 		inputSchool.state + ", " +
-		inputSchool.county + "\n";
+		inputSchool.county;
 
-	if (s.length() > 100)
-	{
-		cout << "string too long";
-	}
-	else
-	{
-		cout << s << endl;
-	}
+	cout << s << endl;
 }
 
 SchoolBST::~SchoolBST() {
-	deleteTree(root);
+	//deleteTree(root);
 }
 
-void SchoolBST::deleteTree(TreeNode* node) {
-	if (node == nullptr)
-		return;
-
-	deleteTree(node->left);  // Recursively delete left subtree
-	deleteTree(node->right); // Recursively delete right subtree
-
-	delete node;  // Delete the current node
-}
+//void SchoolBST::deleteTree(TreeNode* node) {
+//	if (node == nullptr)
+//		return;
+//
+//	deleteTree(node->left);  // Recursively delete left subtree
+//	deleteTree(node->right); // Recursively delete right subtree
+//
+//	delete node;  // Delete the current node
+//}

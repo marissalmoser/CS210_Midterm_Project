@@ -22,7 +22,7 @@ public:
 	~SchoolBST();
 private:
 	TreeNode* root;
-	void insertNode(School school, TreeNode* node);
+	void insertNode(School school, TreeNode *& node);
 	int compareStrings(std::string string1, std::string string2);
 	void inOrder(TreeNode* node);
 	void preOrder(TreeNode* node);
