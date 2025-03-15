@@ -12,7 +12,6 @@ void SchoolBST::insertNode(School school, TreeNode*& node)
 	if (node == nullptr)
 	{
 		node = new TreeNode(school);
-		cout << node->data.name << endl;
 	}
 	else if (compareStrings(school.name, node->data.name) > 0)
 	{
@@ -36,7 +35,6 @@ void SchoolBST::insert(School school)
 	if (root == nullptr)
 	{
 		root = new TreeNode(school);
-		cout << root->data.name << endl;
 		return;
 	}
 
@@ -223,16 +221,20 @@ void SchoolBST::displaySchool(School inputSchool)
 	cout << s << endl;
 }
 
-SchoolBST::~SchoolBST() {
-	//deleteTree(root);
+SchoolBST::~SchoolBST()
+{
+	cout << "destructor called" << endl;
+	deleteTree(root);
 }
 
-//void SchoolBST::deleteTree(TreeNode* node) {
-//	if (node == nullptr)
-//		return;
-//
-//	deleteTree(node->left);  // Recursively delete left subtree
-//	deleteTree(node->right); // Recursively delete right subtree
-//
-//	delete node;  // Delete the current node
-//}
+void SchoolBST::deleteTree(TreeNode* node)
+{
+	if (node == nullptr)
+		return;
+
+	deleteTree(node->left);  // Recursively delete left subtree
+	deleteTree(node->right); // Recursively delete right subtree
+
+	//delete node;  // Delete the current node
+	//cout << node->data.name;
+}

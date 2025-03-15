@@ -192,6 +192,8 @@ void deleteSchool()
 /// </summary>
 void displaySchool(int input)
 { 
+    cout << '\n';
+
     switch (input)
     {
     case 1:
@@ -204,4 +206,6 @@ void displaySchool(int input)
         bst.displayPostOrder();
         break;
     }
+
+    promptUser();
 }
