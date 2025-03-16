@@ -138,7 +138,7 @@ void searchSchool()
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, input);
 
-    School inputSchool;// = bst.findByName(input);
+    School inputSchool = bst.findByName(input);
 
     if (inputSchool.name == "")
     {
@@ -168,7 +168,7 @@ void deleteSchool()
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, input);
 
-    School inputSchool;// = bst.deleteByName(input);
+    School inputSchool = bst.deleteByName(input);
 
     if (inputSchool.name == "")
     {
