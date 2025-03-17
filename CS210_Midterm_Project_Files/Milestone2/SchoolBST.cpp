@@ -3,8 +3,6 @@
 #include <iostream>
 #include <algorithm>
 
-
-
 using namespace std;
 
 void SchoolBST::insertNode(School school, TreeNode*& node)
@@ -93,23 +91,22 @@ School SchoolBST::deleteByName(std::string name)
 
 		//copy successor data
 		toDelete->data = successor->data;
-		cout << "Successor : " << successor->data.name << endl;
+		//cout << "Successor : " << successor->data.name << endl;
 
 		//delete successor
 		
 		//leaf node, no children
-		if (successor->left == nullptr && successor->right == nullptr)
+		if (successor->right == nullptr)
 		{
-			if (root == toDelete)
-			{
-				root = nullptr;
-			}
 			successor = nullptr;
+
 		}
 		//one right child
-		else if (successor->right == nullptr)
+		else
 		{
-			toDelete = toDelete->left;
+			successor = successor->right;
+			//cout << "Successor's replacement : " << successor->data.name << endl;
+
 		}
 	}
 
@@ -251,6 +248,5 @@ void SchoolBST::deleteTree(TreeNode* node)
 	deleteTree(node->left);  // Recursively delete left subtree
 	deleteTree(node->right); // Recursively delete right subtree
 
-	delete node;  // Delete the current node
-	//cout << node->data.name;
+	delete node;
 }
