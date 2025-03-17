@@ -8,7 +8,7 @@
 using namespace std;
 
 //Prototypes
-SchoolBST ReadFromCSV(string filename, bool hasHeader = false);
+void ReadFromCSV(string filename, bool hasHeader = false);
 void promptUser();
 void searchSchool();
 void deleteSchool();
@@ -19,7 +19,7 @@ SchoolBST bst;
 int main()
 {
     //load data, put into list, and display
-    bst = ReadFromCSV("Illinois_Peoria_Schools.csv", true);
+    ReadFromCSV("Illinois_Peoria_Schools.csv", true);
 
     //prompt user to edit data
     promptUser();
@@ -32,16 +32,15 @@ int main()
 /// <param name="hasHeader">will determine whether or not to skip the first
 /// line when reading</param>
 /// <returns></returns>
-SchoolBST ReadFromCSV(string filename, bool hasHeader)
+void ReadFromCSV(string filename, bool hasHeader)
 {
     ifstream file(filename);
-    SchoolBST data;
     string line, word;
     fstream fout;
 
     if (!file.is_open()) {
         cerr << "Error: Could not open file " << filename << endl;
-        return data;
+        return;
     }
 
     //check if first line should be skipped
@@ -73,12 +72,10 @@ SchoolBST ReadFromCSV(string filename, bool hasHeader)
         newSchool.county = row[4];
 
         //add school to data
-        data.insert(newSchool);
+        bst.insert(newSchool);
     }
 
     file.close();
-
-    return data;
 }
 
 /// <summary>
