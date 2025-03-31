@@ -14,7 +14,7 @@ void searchSchool();
 void deleteSchool();
 void displaySchool();
 
-SchoolHashTable ht;
+SchoolHashTable ht(150);
 
 int main()
 {
@@ -73,6 +73,10 @@ void ReadFromCSV(string filename, bool hasHeader)
 
         //add school to data
         ht.insert(newSchool);
+
+        cout << newSchool.name + ", " + newSchool.address + ", " +
+            newSchool.city + ", " + newSchool.state + ", " +
+            newSchool.county << "\n";
     }
 
     file.close();
@@ -129,11 +133,11 @@ void searchSchool()
 
     School inputSchool = ht.findByName(input);
 
-    if (inputSchool.name == "")
+    /*if (inputSchool.name == "")
     {
         cout << "\nInput school is not found\n" << endl;
     }
-    else
+    else*/
     {
         cout << "\nThe school by the name of " << input << " has been found. Here are it's details: \n" <<
             inputSchool.name << ", " <<

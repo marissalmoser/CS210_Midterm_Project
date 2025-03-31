@@ -7,20 +7,38 @@ using namespace std;
 
 void SchoolHashTable::insert(School school)
 {
+    table[hashFunction(school.name)] = school;
+
+    cout << school.name + ", " + school.address + ", " +
+        school.city + ", " + school.state + ", " +
+        school.county << "\n";
 }
 
 School SchoolHashTable::deleteByName(std::string name)
 {
-	return School();
+    School toDelete = table[hashFunction(name)];
+    table[hashFunction(name)] = School();
+	return toDelete;
 }
 
 School SchoolHashTable::findByName(std::string name)
 {
-	return School();
+    School toFind = table[hashFunction(name)];
+    if (toFind.name == name)
+        return toFind;
+    else
+        return School();
 }
 
 void SchoolHashTable::display()
 {
+    for (School school : table)
+    {
+        cout << school.name + ", " +  school.address + ", " +
+            school.city + ", " + school.state + ", " +
+            school.county << "\n";
+    }
+    cout << endl;
 }
 
 int SchoolHashTable::hashFunction(std::string key)
