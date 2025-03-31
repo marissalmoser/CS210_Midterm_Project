@@ -14,7 +14,7 @@ void searchSchool();
 void deleteSchool();
 void displaySchool();
 
-SchoolHashTable ht(150);
+SchoolHashTable ht(100);
 
 int main()
 {
@@ -105,7 +105,7 @@ void promptUser()
         deleteSchool();
         break;
     case 3:
-        cout << "You selected to display in PreOrder." << endl;
+        cout << "You selected to display." << endl;
         displaySchool();
         break;
     default:
@@ -180,8 +180,6 @@ void deleteSchool()
 void displaySchool()
 { 
     cout << '\n';
-
     ht.display();
-
     promptUser();
 }

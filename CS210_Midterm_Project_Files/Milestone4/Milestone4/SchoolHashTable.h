@@ -16,6 +16,6 @@ public:
 private:
 	std::vector< std::vector<School> > table;
 	int tableSize;
-	int hashFunction(std::string key);
+	int hashFunction(std::string key) const;
 };
 

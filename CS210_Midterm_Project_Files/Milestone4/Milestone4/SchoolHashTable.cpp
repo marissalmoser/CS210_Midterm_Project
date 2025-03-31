@@ -10,10 +10,6 @@ void SchoolHashTable::insert(School school)
 {
     //add school to the vector at the hash index
     table[hashFunction(school.name)].push_back(school);
-
-    cout << school.name + ", " + school.address + ", " +
-        school.city + ", " + school.state + ", " +
-        school.county << "\n";
 }
 
 School SchoolHashTable::deleteByName(std::string name)
@@ -55,25 +51,36 @@ School SchoolHashTable::findByName(std::string name)
 
 void SchoolHashTable::display()
 {
-    for (vector<School> vec : table)
+    cout << "Hash:" << '\t' << "Chain:" << '\t' <<
+        "School Data:" << "\n";
+
+    for (int i = 0; i < table.size(); ++i)
     {
-        for (School school : vec)
+        for (int j = 0; j < table[i].size(); ++j)
         {
-            cout << school.name + ", " + school.address + ", " +
-                school.city + ", " + school.state + ", " +
-                school.county << "\n";
+            School school = table[i][j];
+
+            cout << i << '\t' << j << '\t' << 
+                school.name + ", " + school.address + ", " + school.city + ", " +
+                school.state + ", " + school.county << "\n";
         }
     }
+
     cout << endl;
 }
 
-int SchoolHashTable::hashFunction(std::string key)
+/// <summary>
+/// Modulo Hashing Function to Calculate Index
+/// </summary>
+/// <param name="key"></param>
+/// <returns></returns>
+int SchoolHashTable::hashFunction(std::string key) const
 {
     int hash = 0;
     for (char ch : key)
     {
         hash += ch;
     }
-    cout << hash % tableSize << endl;
+
     return hash % tableSize;
 }
