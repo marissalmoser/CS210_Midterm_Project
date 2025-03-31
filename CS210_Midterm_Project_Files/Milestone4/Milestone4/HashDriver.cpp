@@ -3,7 +3,7 @@
 #include <sstream>
 #include <vector>
 
-#include "SchoolBST.h"
+#include "SchoolHashTable.h"
 
 using namespace std;
 
@@ -12,9 +12,9 @@ void ReadFromCSV(string filename, bool hasHeader = false);
 void promptUser();
 void searchSchool();
 void deleteSchool();
-void displaySchool(int input);
+void displaySchool();
 
-SchoolBST bst;
+SchoolHashTable ht;
 
 int main()
 {
@@ -72,14 +72,14 @@ void ReadFromCSV(string filename, bool hasHeader)
         newSchool.county = row[4];
 
         //add school to data
-        bst.insert(newSchool);
+        ht.insert(newSchool);
     }
 
     file.close();
 }
 
 /// <summary>
-/// prompts the user to search for, delete, or display the schools in the bst
+/// prompts the user to search for, delete, or display the schools in the ht
 /// </summary>
 void promptUser()
 {
@@ -108,15 +108,7 @@ void promptUser()
         break;
     case 3:
         cout << "You selected to display in PreOrder." << endl;
-        displaySchool(1);
-        break;
-    case 4:
-        cout << "You selected to display in InOrder." << endl;
-        displaySchool(2);
-        break;
-    case 5:
-        cout << "You selected to display in PostOrder." << endl;
-        displaySchool(3);
+        displaySchool();
         break;
     default:
         cout << "You selected to exit.\n" << endl;
@@ -135,7 +127,7 @@ void searchSchool()
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, input);
 
-    School inputSchool = bst.findByName(input);
+    School inputSchool = ht.findByName(input);
 
     if (inputSchool.name == "")
     {
@@ -165,7 +157,7 @@ void deleteSchool()
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     getline(cin, input);
 
-    School inputSchool = bst.deleteByName(input);
+    School inputSchool = ht.deleteByName(input);
 
     if (inputSchool.name == "")
     {
@@ -185,24 +177,13 @@ void deleteSchool()
 }
 
 /// <summary>
-/// displays schools in the list and then prompts the user again.
+/// displays schools in the ht and then prompts the user again.
 /// </summary>
-void displaySchool(int input)
+void displaySchool()
 { 
     cout << '\n';
 
-    switch (input)
-    {
-    case 1:
-        bst.displayPreOrder();
-        break;
-    case 2:
-        bst.displayInOrder();
-        break;
-    case 3:
-        bst.displayPostOrder();
-        break;
-    }
+    ht.display();
 
     promptUser();
 }
