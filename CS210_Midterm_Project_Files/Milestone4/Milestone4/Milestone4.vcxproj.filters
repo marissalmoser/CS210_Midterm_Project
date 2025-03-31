@@ -15,8 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Driver.cpp">
+    <ClCompile Include="HashDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="School.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SchoolHashTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SchoolHashTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Illinois_Peoria_Schools.csv">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -73,10 +73,6 @@ void ReadFromCSV(string filename, bool hasHeader)
 
         //add school to data
         ht.insert(newSchool);
-
-        cout << newSchool.name + ", " + newSchool.address + ", " +
-            newSchool.city + ", " + newSchool.state + ", " +
-            newSchool.county << "\n";
     }
 
     file.close();
@@ -91,10 +87,8 @@ void promptUser()
         "Select 1, 2, 3, or 4: \n" <<
         "1. Search for school by name\n" <<
         "2. Delete school by name\n" <<
-        "3. Display List of Schools in PreOrder\n" <<
-        "4. Display List of Schools in InOrder\n" <<
-        "5. Display List of Schools in PostOrder\n" <<
-        "6. Exit\n" <<
+        "3. Display Table of Schools\n" <<
+        "4. Exit\n" <<
         "------------------------------------\n" << endl;
 
     int input;
@@ -133,11 +127,11 @@ void searchSchool()
 
     School inputSchool = ht.findByName(input);
 
-    /*if (inputSchool.name == "")
+    if (inputSchool.name == "")
     {
         cout << "\nInput school is not found\n" << endl;
     }
-    else*/
+    else
     {
         cout << "\nThe school by the name of " << input << " has been found. Here are it's details: \n" <<
             inputSchool.name << ", " <<

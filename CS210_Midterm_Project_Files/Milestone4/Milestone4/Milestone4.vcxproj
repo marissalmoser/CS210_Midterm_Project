@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HashDriver.cpp" />
+    <ClCompile Include="School.cpp" />
+    <ClCompile Include="SchoolHashTable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Illinois_Peoria_Schools.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SchoolHashTable.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,9 +137,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Driver.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

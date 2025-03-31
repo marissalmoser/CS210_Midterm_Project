@@ -14,7 +14,7 @@ public:
 	void display();
 
 private:
-	std::vector<School> table;
+	std::vector< std::vector<School> > table;
 	int tableSize;
 	int hashFunction(std::string key);
 };
