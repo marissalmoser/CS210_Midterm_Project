@@ -78,8 +78,6 @@ School SchoolList::deleteByName(string name)
     //head is target or only thing in list
     if (compareStrings(head->data.name, name))
     {
-        cout << "deleting head node" << endl;
-
         head = head->next;
         return temp->data;
     }
@@ -97,7 +95,6 @@ School SchoolList::deleteByName(string name)
         return foundSchool->data;
     }
 
-    cout << "deleting other node" << endl;
     foundSchool = temp->next;
     temp->next = temp->next->next;
     return foundSchool->data;
